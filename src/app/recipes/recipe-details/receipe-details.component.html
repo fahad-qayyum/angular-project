@@ -1,33 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <img alt="" class="img-fluid" src="{{recipe.imagePath}}">
+<div class="row">
+  <div class="col-xs-12">
+    <img alt="" class="img-responsive" src="{{recipe.imagePath}}">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{recipe.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div appDropdown class="btn-group">
+      <button class="btn btn-primary dropdown-toggle">
+        Manage Recipe
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToShoppingList()">To Shopping List</a></li>
+        <li><a [routerLink]="['edit']">Edit Recipe</a></li>
+        <li><a >Delete Recipe</a></li>
+      </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <h1>{{recipe.name}}</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="btn-group">
-        <button class="btn btn-primary dropdown-toggle">
-          Manage Receipe
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">To Shopping List</a></li>
-          <li><a href="#">Edit Recipe</a></li>
-          <li><a href="#">Delete Recipe</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12"><p>{{recipe.description}}</p></div>
-  </div>
-  <div class="row">
-    <div class="col-12"><p>Ingredients</p></div>
+</div>
+<div class="row">
+  <div class="col-xs-12"><p>{{recipe.description}}</p></div>
+</div>
+<div class="row">
+  <div *ngFor="let rec of recipe.ingredients" class="col-xs-12">
+    <p>Name: {{rec.name}} - Amount: {{rec.amount}}</p>
   </div>
 </div>

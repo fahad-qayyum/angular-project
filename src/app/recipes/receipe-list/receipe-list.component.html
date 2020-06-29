@@ -1,13 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <a
-        *ngFor="let recipe of recipes"
-        (click)="onRecipeClick(recipe)"
-         class="list-group-item clearfix"
-         href="#">
-        <app-receipe-item [recipe]="recipe"></app-receipe-item>
-      </a>
-    </div>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
   </div>
 </div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      routerLinkActive="active"
+      *ngFor="let recipe of recipes"
+      [routerLink]="[recipe.id]"
+      class="list-group-item clearfix"
+      style="cursor: pointer;"
+    >
+      <app-receipe-item [recipe]="recipe"></app-receipe-item>
+    </a>
+  </div>
+</div>
+

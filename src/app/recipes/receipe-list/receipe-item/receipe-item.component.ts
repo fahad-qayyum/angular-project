@@ -9,7 +9,9 @@ import {Recipe} from "../../recipe.model";
 export class ReceipeItemComponent implements OnInit {
 
   @Input() recipe: Recipe
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
