@@ -7,7 +7,6 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() btnClickedName = new EventEmitter<string>();
 
   constructor() {
   }
@@ -15,8 +14,5 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  btnClicked(btnName: string) {
-    this.btnClickedName.emit(btnName);
-  }
 
 }

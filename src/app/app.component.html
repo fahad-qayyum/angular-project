@@ -1,12 +1,11 @@
-<app-header
-  (btnClickedName)="btnClickedName($event)"
-></app-header>
+<app-header></app-header>
 <br><br>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-receipes *ngIf="recipeBtnClicked"></app-receipes>
-      <app-shopping-list *ngIf="!recipeBtnClicked"></app-shopping-list>
+      <router-outlet></router-outlet>
+      <!--      <app-receipes *ngIf="recipeBtnClicked"></app-receipes>-->
+      <!--      <app-shopping-list *ngIf="!recipeBtnClicked" (onShoppingListClicked)="showShoppingList()"></app-shopping-list>-->
     </div>
   </div>
 
