@@ -28,7 +28,6 @@ export class RecipeEditComponent implements OnInit {
 
   onSubmit() {
     const newRecipe = new Recipe(
-      ++this.recipeService.getRecipes().length,
       this.recipeForm.value['name'],
       this.recipeForm.value['description'],
       this.recipeForm.value['imagePath'],
