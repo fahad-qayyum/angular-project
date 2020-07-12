@@ -4,6 +4,7 @@ import {LoadingSpinnerComponent} from "./loading-spinner/loading-spinner.compone
 import {AlertComponent} from "./alert/alert.component";
 import {PlaceholderDirective} from "./placeholder/placeholder.directive";
 import {DropdownDirective} from "./dropdown.directive";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {DropdownDirective} from "./dropdown.directive";
     AlertComponent,
     PlaceholderDirective,
     DropdownDirective,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
 
   // Only the components that are created dynamically should be named in entryComponents
