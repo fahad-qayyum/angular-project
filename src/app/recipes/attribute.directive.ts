@@ -3,7 +3,7 @@ import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Rendere
 @Directive({
   selector: '[attributeDirective]'
 })
-export class AttributeDirectiveDirective implements OnInit{
+export class AttributeDirective implements OnInit{
 
   @Input('hoverColor') hoverColor: string;
   @Input('nonHoverColor') nonHoverColor: string;
