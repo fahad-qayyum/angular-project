@@ -5,11 +5,8 @@ import {HeaderComponent} from './header/header.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
-import {RecipesModule} from "./recipes/recipes.module";
-import {ShoppingListModule} from "./shopping-list/shopping-list.module";
 import {SharedModule} from "./shared/shared.module";
 import {CoreModule} from "./core.module";
-import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -21,11 +18,8 @@ import {AuthModule} from "./auth/auth.module";
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    RecipesModule,
-    ShoppingListModule,
     SharedModule,
     CoreModule,
-    AuthModule
   ],
 
   // This make sure our app only have one instance of RecipeService and ShoppingListService all through the app.
