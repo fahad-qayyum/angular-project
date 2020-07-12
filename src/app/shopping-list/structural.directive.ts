@@ -3,7 +3,7 @@ import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
 @Directive({
   selector: '[appStructuralDirective]'
 })
-export class StructuralDirectiveDirective {
+export class StructuralDirective {
 
   constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) {
   }
