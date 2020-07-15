@@ -1,12 +1,21 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {async, TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from "./header/header.component";
+import {RouterTestingModule} from "@angular/router/testing";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {AuthService} from "./auth/auth.service";
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent
       ],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ]
     }).compileComponents();
   }));
 
@@ -22,10 +31,17 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('project');
   });
 
-  it('should render title', () => {
+  it('should call the autoLogin on the ngOnInit', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
+    let authService = fixture.debugElement.injector.get(AuthService);
+    spyOn(authService, 'autoLogin');
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('project app is running!');
-  });
+    expect(authService.autoLogin).toHaveBeenCalled();
+  }))
+
+  it('should have the header component', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('app-header')).not.toBe(null);
+  }))
 });

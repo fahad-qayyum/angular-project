@@ -28,6 +28,7 @@ export class AuthService {
 
   // PLATFORM_ID is provided by angular which tells you on which platform you are running the application
   constructor(private http: HttpClient, private router: Router, @Inject(PLATFORM_ID) private platformId) {
+    console.log("Platform ID is : " + platformId);
   }
 
   signUp(email: string, password: string): Observable<any> {
