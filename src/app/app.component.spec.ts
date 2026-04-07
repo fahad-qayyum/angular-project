@@ -5,7 +5,7 @@ import {RouterTestingModule} from "@angular/router/testing";
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {AuthService} from "./auth/auth.service";
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -37,11 +37,11 @@ fdescribe('AppComponent', () => {
     spyOn(authService, 'autoLogin');
     fixture.detectChanges();
     expect(authService.autoLogin).toHaveBeenCalled();
-  }))
+  }));
 
   it('should have the header component', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-header')).not.toBe(null);
-  }))
+  }));
 });
